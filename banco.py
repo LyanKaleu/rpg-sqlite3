@@ -1,6 +1,5 @@
 import sqlite3
 
-
 # Setup do banco
 conexao = sqlite3.connect("rpg.db")
 conexao.execute("PRAGMA foreign_keys=ON")
@@ -43,19 +42,19 @@ cursor.executescript("""
 
 
 # Inserindo os dados na tabela
-cursor.executemany("INSERT INTO personagens VALUES(?,?,?,?,?)", [
+cursor.executemany("INSERT INTO personagens (nome_personagem, genero, raca, atributos, habilidades) VALUES(?,?,?,?,?)", [
     ("Lyra Vento-Lâmina","F","Elfo","Agilidade e sabedoria", "Tiro Certeiro"),
     ("Thorgar Martelo-de-Pedra","M","Anão","Constituição e Força", "Muralha de ferro"),
     ("Kaelen do Véu Rubro", "F", "Tiefling", "Inteligência e Feitiçaria", "Chamas Infernais")
 ])
 
-cursor.executemany("INSERT INTO classes VALUES(?,?,?,?,?)", [
+cursor.executemany("INSERT INTO classes (nome_classe, descricao, pontos_vida, pontos_resistencia, estilo_de_jogo) VALUES(?,?,?,?,?)", [
     ("Ladino", "Especialista em furtividade, agilidade, armadilhas e ataques precisos.", 9, 15, "Bater e correr"),
     ("Guerreiro", "Mestre no combate armado, uso de escudos e armaduras pesadas.", 14, 18, "Tanque"),
     ("Mago", "Artes arcanas, manipulação de energia elemental e sombria.", 7, 12, "Artilharia mágica")
 ])
 
-cursor.executemany("INSERT INTO personagens_classes  VALUES(?,?,?)", [
+cursor.executemany("INSERT INTO personagens_classes (id_personagem, id_classe, nivel_experiencia) VALUES(?,?,?)", [
     (1, 1, 12),
     (2, 2, 23),
     (3, 3, 14)
@@ -64,16 +63,3 @@ cursor.executemany("INSERT INTO personagens_classes  VALUES(?,?,?)", [
 
 # Confirmar as alterações no banco
 conexao.commit()
-
-
-# Consultas no banco
-cursor.execute("""
-""")
-
-
-cursor.execute("""
-""")
-
-
-cursor.execute("""
-""")
