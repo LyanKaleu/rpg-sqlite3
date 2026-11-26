@@ -42,7 +42,7 @@ def menu_personagens():
 
 def menu_classes():
     while True:
-        opcao = tela.menu("CLASSES", ["Cadastrar", "Listar", "Pesquisar", "Alterar", "Exluir"])
+        opcao = tela.menu("CLASSES", ["Cadastrar", "Listar", "Pesquisar", "Alterar", "Excluir"])
 
         try:
             match opcao:

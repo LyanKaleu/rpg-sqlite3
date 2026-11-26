@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1100" height="500" fill="#ffffff"/>
+
+  <!-- Título -->
+  <text x="40" y="52" font-size="28" font-weight="700" fill="#0f172a">Relacionamento N:N</text>
+  <text x="40" y="80" font-size="15" fill="#64748b">Um personagem pode ter várias classes, e uma classe pode ter vários personagens</text>
+
+  <!-- ===== personagens ===== -->
+  <g>
+    <rect x="40" y="130" width="300" height="244" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <path d="M40 140 a10 10 0 0 1 10 -10 h280 a10 10 0 0 1 10 10 v30 h-300 z" fill="#084779"/>
+    <text x="190" y="157" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Consolas, Menlo, monospace">personagens</text>
+    <rect x="41" y="204" width="298" height="34" fill="#f8fafc"/>
+    <rect x="41" y="272" width="298" height="34" fill="#f8fafc"/>
+    <path d="M41 340 h298 v24 a10 10 0 0 1 -10 10 h-278 a10 10 0 0 1 -10 -10 z" fill="#f8fafc"/>
+    <g stroke="#e2e8f0"><line x1="40" y1="204" x2="340" y2="204"/><line x1="40" y1="238" x2="340" y2="238"/><line x1="40" y1="272" x2="340" y2="272"/><line x1="40" y1="306" x2="340" y2="306"/><line x1="40" y1="340" x2="340" y2="340"/></g>
+    <g font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#0f172a">
+      <text x="114" y="192">id_personagem</text>
+      <text x="114" y="226">nome_personagem</text>
+      <text x="114" y="260">genero</text>
+      <text x="114" y="294">raca</text>
+      <text x="114" y="328">atributos</text>
+      <text x="114" y="362">habilidades</text>
+    </g>
+    <g font-size="11" fill="#64748b" text-anchor="end">
+      <text x="330" y="191">INTEGER</text><text x="330" y="225">TEXT</text><text x="330" y="259">TEXT</text>
+      <text x="330" y="293">TEXT</text><text x="330" y="327">TEXT</text><text x="330" y="361">TEXT</text>
+    </g>
+  </g>
+
+  <!-- ===== personagens_classes (associativa) ===== -->
+  <g>
+    <rect x="400" y="130" width="300" height="142" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <path d="M400 140 a10 10 0 0 1 10 -10 h280 a10 10 0 0 1 10 10 v30 h-300 z" fill="#d97706"/>
+    <text x="550" y="157" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Consolas, Menlo, monospace">personagens_classes</text>
+    <rect x="401" y="204" width="298" height="34" fill="#f8fafc"/>
+    <g stroke="#e2e8f0"><line x1="400" y1="204" x2="700" y2="204"/><line x1="400" y1="238" x2="700" y2="238"/></g>
+    <g font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#0f172a">
+      <text x="474" y="192">id_personagem</text>
+      <text x="474" y="226">id_classe</text>
+      <text x="474" y="260">nivel_experiencia</text>
+    </g>
+    <g font-size="11" fill="#64748b" text-anchor="end">
+      <text x="690" y="191">INTEGER</text><text x="690" y="225">INTEGER</text><text x="690" y="259">INTEGER</text>
+    </g>
+    <text x="550" y="296" font-size="14" font-style="italic" fill="#d97706" text-anchor="middle">tabela associativa</text>
+    <text x="550" y="316" font-size="12" fill="#64748b" text-anchor="middle">PK composta (id_personagem, id_classe)</text>
+    <text x="550" y="334" font-size="12" fill="#64748b" text-anchor="middle">nivel_experiencia = atributo do vínculo (DEFAULT 1)</text>
+    <text x="550" y="352" font-size="12" fill="#64748b" text-anchor="middle">as duas FKs: ON DELETE CASCADE</text>
+  </g>
+
+  <!-- ===== classes ===== -->
+  <g>
+    <rect x="760" y="164" width="300" height="244" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <path d="M760 174 a10 10 0 0 1 10 -10 h280 a10 10 0 0 1 10 10 v30 h-300 z" fill="#084779"/>
+    <text x="910" y="191" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Consolas, Menlo, monospace">classes</text>
+    <rect x="761" y="238" width="298" height="34" fill="#f8fafc"/>
+    <rect x="761" y="306" width="298" height="34" fill="#f8fafc"/>
+    <path d="M761 374 h298 v24 a10 10 0 0 1 -10 10 h-278 a10 10 0 0 1 -10 -10 z" fill="#f8fafc"/>
+    <g stroke="#e2e8f0"><line x1="760" y1="238" x2="1060" y2="238"/><line x1="760" y1="272" x2="1060" y2="272"/><line x1="760" y1="306" x2="1060" y2="306"/><line x1="760" y1="340" x2="1060" y2="340"/><line x1="760" y1="374" x2="1060" y2="374"/></g>
+    <g font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#0f172a">
+      <text x="834" y="226">id_classe</text>
+      <text x="834" y="260">nome_classe</text>
+      <text x="834" y="294">descricao</text>
+      <text x="834" y="328">pontos_vida</text>
+      <text x="834" y="362">pontos_resistencia</text>
+      <text x="834" y="396">estilo_de_jogo</text>
+    </g>
+    <g font-size="11" fill="#64748b" text-anchor="end">
+      <text x="1050" y="225">INTEGER</text><text x="1050" y="259">TEXT</text><text x="1050" y="293">TEXT</text>
+      <text x="1050" y="327">INTEGER</text><text x="1050" y="361">INTEGER</text><text x="1050" y="395">TEXT</text>
+    </g>
+  </g>
+
+  <!-- ===== Selos (badges) ===== -->
+  <defs>
+    <g id="pk"><rect width="26" height="18" rx="4" fill="#fef3c7"/><text x="13" y="13" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">PK</text></g>
+    <g id="fk"><rect width="26" height="18" rx="4" fill="#ede9fe"/><text x="13" y="13" font-size="10" font-weight="700" fill="#6d28d9" text-anchor="middle">FK</text></g>
+    <g id="uq"><rect width="26" height="18" rx="4" fill="#dcfce7"/><text x="13" y="13" font-size="10" font-weight="700" fill="#166534" text-anchor="middle">UQ</text></g>
+    <g id="nn"><rect width="26" height="18" rx="4" fill="#e2e8f0"/><text x="13" y="13" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">NN</text></g>
+    <g id="ck"><rect width="26" height="18" rx="4" fill="#fee2e2"/><text x="13" y="13" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="middle">CK</text></g>
+  </defs>
+  <!-- personagens -->
+  <use href="#pk" x="50" y="178"/>
+  <use href="#uq" x="50" y="212"/><use href="#nn" x="80" y="212"/>
+  <use href="#nn" x="50" y="246"/><use href="#ck" x="80" y="246"/>
+  <use href="#nn" x="50" y="280"/>
+  <!-- associativa -->
+  <use href="#pk" x="410" y="178"/><use href="#fk" x="440" y="178"/>
+  <use href="#pk" x="410" y="212"/><use href="#fk" x="440" y="212"/>
+  <use href="#nn" x="410" y="246"/>
+  <!-- classes -->
+  <use href="#pk" x="770" y="212"/>
+  <use href="#uq" x="770" y="246"/><use href="#nn" x="800" y="246"/>
+  <use href="#nn" x="770" y="314"/>
+  <use href="#nn" x="770" y="348"/>
+
+  <!-- ===== Ligações (1 ── N) ===== -->
+  <g stroke="#475569" stroke-width="2.5" fill="none">
+    <!-- personagens.id_personagem 1 ── N personagens_classes.id_personagem -->
+    <line x1="340" y1="187" x2="400" y2="187"/>
+    <line x1="354" y1="178" x2="354" y2="196"/>
+    <polyline points="400,177 386,187 400,197"/>
+    <!-- personagens_classes.id_classe N ── 1 classes.id_classe -->
+    <line x1="700" y1="221" x2="760" y2="221"/>
+    <line x1="746" y1="212" x2="746" y2="230"/>
+    <polyline points="700,211 714,221 700,231"/>
+  </g>
+  <g font-size="15" font-weight="700" fill="#475569">
+    <text x="344" y="172">1</text><text x="386" y="172">N</text>
+    <text x="704" y="206">N</text><text x="748" y="206">1</text>
+  </g>
+
+  <!-- ===== Legenda ===== -->
+  <g font-size="13" fill="#475569">
+    <use href="#pk" x="40" y="446"/><text x="72" y="460">chave primária</text>
+    <use href="#fk" x="200" y="446"/><text x="232" y="460">chave estrangeira</text>
+    <use href="#uq" x="378" y="446"/><text x="410" y="460">UNIQUE (valor único)</text>
+    <use href="#nn" x="566" y="446"/><text x="598" y="460">NOT NULL (obrigatório)</text>
+    <use href="#ck" x="770" y="446"/><text x="802" y="460">CHECK (genero: M ou F)</text>
+  </g>
+</svg>
